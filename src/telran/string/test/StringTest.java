@@ -75,5 +75,35 @@ class StringTest {
 		
 	}
 	
+	@Test
+	@DisplayName("test of the equalsIgnoreCase method")
+	void equalsIgnoreCaseTest() {
+		String hello = "Hello";
+		assertTrue(hello.equalsIgnoreCase("hElLo"));
+		assertFalse(hello.equalsIgnoreCase(null));
+		assertFalse(hello.equalsIgnoreCase("Hello "));
+
+	}
+	
+	@Test
+	@DisplayName("test of the indexOf method")
+	void indexOfTest() {
+		String hello = "Hello";
+		assertTrue(hello.indexOf("ol") == -1);
+		assertFalse(hello.indexOf("h") == 0);
+		assertTrue(hello.indexOf("lo") == 3);
+		assertTrue(hello.indexOf("l") == 2);
+		
+	}
+	
+	@Test
+	@DisplayName("test of the lastIndexOf(ch) method")
+	void lastIndexOfTest() {
+		String hello = "Hello";
+		assertTrue(hello.lastIndexOf('H') == 0);
+		assertTrue(hello.lastIndexOf('h') == -1);
+		assertTrue(hello.lastIndexOf('l') == 3);
+		
+	}
 
 }
