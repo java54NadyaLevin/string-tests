@@ -13,6 +13,7 @@ class StringTest {
 	void concatTest() {
 		String hello = "Hello";
 		assertEquals("Hello World!!", hello.concat(" World!").concat("!"));
+		assertEquals(hello, hello.concat(""));
 				
 	}
 	
