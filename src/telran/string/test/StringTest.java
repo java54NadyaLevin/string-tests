@@ -47,10 +47,33 @@ class StringTest {
 		assertTrue(hello.compareToIgnoreCase("hello") == 0);
 		assertTrue(hello.compareToIgnoreCase("hello ") == -1);
 		assertTrue(hello.compareToIgnoreCase("hell") == 1);
-		assertTrue(hello.compareToIgnoreCase("(ello") == 64); //? This is for toLowerCase method. But for some locales toUpperCase method is used.
+		assertTrue(hello.compareToIgnoreCase("(ello") == 64); //? This is for toLowerCase method. But as far as I understood, for some locales toUpperCase method is used.
 		assertTrue(hello.compareToIgnoreCase("Hellо") != 0); // "o" is cyrillic = unicode value differs.
 	
 	}
 
+	
+	@Test
+	@DisplayName("test of the startsWith method")
+	void startsWithTest() {
+		String hello = "Hello";
+		assertTrue(hello.startsWith("H"));
+		assertFalse(hello.startsWith("J"));
+		assertTrue(hello.startsWith(""));
+		assertFalse(hello.startsWith("h"));
+		
+	}
+	
+	@Test
+	@DisplayName("test of the endsWith method")
+	void endsWithTest() {
+		String hello = "Hello";
+		assertTrue(hello.endsWith("o"));
+		assertFalse(hello.endsWith("j"));
+		assertTrue(hello.endsWith(""));
+		assertFalse(hello.endsWith("O"));
+		
+	}
+	
 
 }
